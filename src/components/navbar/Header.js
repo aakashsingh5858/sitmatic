@@ -6,7 +6,6 @@ import Menu from "./sub-menu/Menu";
 
 const Header = () => {
   const [dropdown, setDropdown] = useState([]);
-  console.log(dropdown, "...////");
   const onMouseEnter = (id) => {
     setDropdown((prev) => {
       let arr = [...prev];
@@ -33,7 +32,7 @@ const Header = () => {
             <div
               style={{ position: "relative" }}
               onMouseEnter={() => onMouseEnter(i)}
-              onMouseLeave={() => onMouseLeave(i)}
+                onMouseLeave={() => onMouseLeave(i)}
               key={i}
             >
               <li className="headerListItem">{menu.title}</li>

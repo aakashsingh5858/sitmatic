@@ -1,12 +1,14 @@
 import Menu from "./Menu";
-const SubMenu = ({ submenus, dropdown, depthLevel }) => {
-  depthLevel = depthLevel + 1;
-  const dropdownClass = depthLevel > 1 ? "dropdown-submenu" : "";
+const SubMenu = ({ submenus }) => {
   return (
-    <ul className={`dropdown ${dropdownClass} ${dropdown ? "show" : ""}`}>
-      {submenus.map((submenu, index) => (
-        <Menu items={submenu} key={index} depthLevel={depthLevel} />
-      ))}
+    <ul className="subMenuContainer">
+      {submenus?.map((list, i) => {
+        return (
+          <div className="subMenuItemBlock" key={i}>
+            <li className="subMenuItem">{list.title}</li>
+          </div>
+        );
+      })}
     </ul>
   );
 };
