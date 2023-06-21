@@ -32,11 +32,15 @@ const Header = () => {
             <div
               style={{ position: "relative" }}
               onMouseEnter={() => onMouseEnter(i)}
-                onMouseLeave={() => onMouseLeave(i)}
+              onMouseLeave={() => onMouseLeave(i)}
               key={i}
             >
-              <li className="headerListItem">{menu.title}</li>
-              {dropdown[i] && <Menu items={menu.submenu} />}
+              <li className="headerListItem">
+                {menu.title}
+                {menu.submenu && <div className="dash"></div>}
+
+                {dropdown[i] && <Menu items={menu.submenu} />}
+              </li>
             </div>
           );
         })}
