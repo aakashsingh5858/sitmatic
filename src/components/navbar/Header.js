@@ -1,34 +1,47 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Logo from "../../assets/SitmaticLogoNew.png";
 import "./header.css";
+import { menuItems } from "../../Data";
+import Menu from "./sub-menu/Menu";
 
 const Header = () => {
-  const [activeTab, setActiveTab] = useState(0);
-  const headerList = [
-    "HOME",
-    "PRODUCT",
-    "ERGONOMICS",
-    "RESOURCES",
-    "ABOUTS US",
-    "CONTACT US",
-  ];
+  const [dropdown, setDropdown] = useState([]);
+  console.log(dropdown, "...////");
+  const onMouseEnter = (id) => {
+    setDropdown((prev) => {
+      let arr = [...prev];
+      arr[id] = true;
+      return arr;
+    });
+  };
+
+  const onMouseLeave = (id) => {
+    setDropdown((prev) => {
+      let arr = [...prev];
+      arr[id] = false;
+      return arr;
+    });
+  };
   return (
     <div className="headerContainer">
       <div className="headerLogo">
         <img src={Logo} />
       </div>
-      <div className="headerList">
-        {headerList.map((list, ind) => {
+      <ul className="headerList">
+        {menuItems.map((menu, i) => {
           return (
-            <li
-              className={`headerListItem ${activeTab === ind && "active"}`}
-              onClick={() => setActiveTab(ind)}
+            <div
+              style={{ position: "relative" }}
+              onMouseEnter={() => onMouseEnter(i)}
+              onMouseLeave={() => onMouseLeave(i)}
+              key={i}
             >
-              {list}
-            </li>
+              <li className="headerListItem">{menu.title}</li>
+              {dropdown[i] && <Menu items={menu.submenu} />}
+            </div>
           );
         })}
-      </div>
+      </ul>
     </div>
   );
 };
