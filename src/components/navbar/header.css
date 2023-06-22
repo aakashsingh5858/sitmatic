@@ -1,5 +1,5 @@
 .headerContainer {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: #00000080;
   width: 100%;
   display: flex;
   align-items: baseline;
@@ -54,5 +54,16 @@
   left: 20px;
   opacity: 1;
 }
+.burgerIconBlock {
+  width: 20%;
 
+}
 
+.burgerIcon {
+  width: 25px;
+  height: 3px;
+  border-radius: 2px;
+  background-color: #fff;
+  opacity: 0.8;
+  margin: 4px 0;
+}

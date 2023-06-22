@@ -1,11 +1,16 @@
 import React, { useEffect, useRef, useState } from "react";
-import Logo from "../../assets/SitmaticLogoNew.png";
+import Logo from "../../assets/image/SitmaticLogoNew.png";
 import "./header.css";
 import { menuItems } from "../../Data";
 import Menu from "./sub-menu/Menu";
+import BarIcon from "../../assets/image/bar.png";
+import Sidebar from "../sidebar/Sidebar";
 
 const Header = () => {
   const [dropdown, setDropdown] = useState([]);
+  const [isOpen, setIsOpen] = useState(false);
+  const [getValue, setValue] = useState();
+
   const onMouseEnter = (id) => {
     setDropdown((prev) => {
       let arr = [...prev];
@@ -21,10 +26,19 @@ const Header = () => {
       return arr;
     });
   };
+
+  const getData = () => {
+    let arr = [];
+    menuItems.map((items, i) => {
+      arr.push(items);
+    });
+    setValue(arr);
+  };
+  console.log(getValue, "getValue");
   return (
     <div className="headerContainer">
       <div className="headerLogo">
-        <img src={Logo} />
+        <img src={Logo} className="logo" />
       </div>
       <ul className="headerList">
         {menuItems.map((menu, i) => {
@@ -45,6 +59,17 @@ const Header = () => {
           );
         })}
       </ul>
+      <div className="burgerIconBlock">
+        <img
+          src={BarIcon}
+          width={40}
+          onClick={() => {
+            getData();
+            setIsOpen(true);
+          }}
+        />
+      </div>
+      <Sidebar isOpen={isOpen} setIsOpen={setIsOpen} getValue={getValue} />
     </div>
   );
 };
