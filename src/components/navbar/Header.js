@@ -34,7 +34,6 @@ const Header = () => {
     });
     setValue(arr);
   };
-  console.log(getValue, "getValue");
   return (
     <div className="headerContainer">
       <div className="headerLogo">

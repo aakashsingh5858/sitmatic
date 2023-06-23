@@ -6,7 +6,10 @@
   right: 0;
   box-shadow: #6363634d 0px 2px 12px 0px;
   transition: 0.5s;
+  z-index: 1;
+  top: 0;
 }
+
 .sidebarBackBtn {
   display: flex;
   align-items: center;
