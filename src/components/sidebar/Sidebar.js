@@ -8,7 +8,6 @@ const Sidebar = ({ isOpen, setIsOpen, getValue }) => {
   const [subMenuValue, setSubmenuValue] = useState();
   const [activeSidebarMenu, setActiveSidebarMenu] = useState(false);
   const [activeSubmenu, setActiveSubmenu] = useState(false);
-
   const getMenu = (data) => {
     let arr = [];
     data.map((list, i) => {
@@ -50,7 +49,9 @@ const Sidebar = ({ isOpen, setIsOpen, getValue }) => {
                   className="sideListContent"
                   style={{ width: list.submenu ? "90%" : "100%" }}
                 >
-                  {list.title}
+                  <a className="SidebarMenuListItem" href={list.link}>
+                    {list.title}
+                  </a>
                 </li>
                 {list.submenu ? (
                   <div className="sidebarBtnIcon">
@@ -96,13 +97,16 @@ const Sidebar = ({ isOpen, setIsOpen, getValue }) => {
         </div>
         <div style={{ widh: "100%" }}>
           {menuValue?.map((list, i) => {
+            // console.log(list, ".....link");
             return (
               <div className="sideListContentBlock" key={i}>
                 <li
                   className="sideListContent"
                   style={{ width: list.submenu ? "90%" : "100%" }}
                 >
-                  {list.title}
+                  <a className="SidebarMenuListItem" href={list.link}>
+                    {list.title}
+                  </a>
                 </li>
                 {list.submenu ? (
                   <div className="sidebarBtnIcon">
@@ -151,7 +155,9 @@ const Sidebar = ({ isOpen, setIsOpen, getValue }) => {
                 className="sideListContent"
                 style={{ width: list.submenu ? "90%" : "100%" }}
               >
-                {list.title}
+                <a className="SidebarMenuListItem" href={list.link}>
+                  {list.title}
+                </a>
               </li>
               {list.submenu ? (
                 <div className="sidebarBtnIcon">

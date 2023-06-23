@@ -31,6 +31,10 @@
   cursor: pointer;
   padding: 0px 8px;
 }
+.listItem{
+  text-decoration: none;
+  color: #fff;
+}
 .active {
   background-color: #cd2121;
   color: #fff;

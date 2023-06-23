@@ -20,7 +20,11 @@ const SubMenu = ({ submenus }) => {
       {submenus?.map((list, i) => {
         return (
           <div className="subMenuItemBlock" key={i}>
-            <li className="subMenuItem">{list.title}</li>
+            <li className="subMenuItem">
+              <a className="menuListItem" href={list.link}>
+                {list.title}
+              </a>
+            </li>
           </div>
         );
       })}

@@ -16,6 +16,9 @@
   .burgerIconBlock {
     display: none;
   }
+  .sidebarWrapper {
+    display: none;
+  }
 }
 @media all and (max-width: 964px) {
   .headerList {

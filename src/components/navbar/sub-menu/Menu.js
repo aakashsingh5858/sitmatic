@@ -30,7 +30,9 @@ const Menu = ({ items }) => {
             onMouseLeave={() => onMouseLeave(i)}
           >
             <li className="subMenuItem" style={{ position: "relative" }}>
-              {list.title}
+              <a className="menuListItem" href={list.link}>
+                {list.title}
+              </a>
               {dropdown[i] && <SubMenu submenus={list.submenu} />}
             </li>
             {list.submenu ? <div className="subMenudash"></div> : <span />}

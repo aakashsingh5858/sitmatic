@@ -49,7 +49,10 @@ const Header = () => {
               key={i}
             >
               <li className="headerListItem">
-                {menu.title}
+                <a className="listItem" href={menu.link}>
+                  {menu.title}
+                </a>
+
                 {menu.submenu && <div className="dash"></div>}
 
                 {dropdown[i] && <Menu items={menu.submenu} />}

@@ -57,3 +57,7 @@
   left: 186px;
   top: 0;
 }
+.menuListItem {
+  text-decoration: none;
+  color: #807e7e;
+}

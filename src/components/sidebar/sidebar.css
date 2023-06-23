@@ -44,7 +44,7 @@
   width: 90%;
 }
 .sideListContent:hover {
-  color: rgba(0, 0, 0, 0.85);
+  color: #000000d9;
   background-color: rgba(0, 0, 0, 0.05);
 }
 .sideListContentBlock {
@@ -60,4 +60,8 @@
   justify-content: center;
   border-left: 1px solid #72727280;
   border-bottom: 1px solid #72727280;
+}
+.SidebarMenuListItem {
+  text-decoration: none;
+  color: #000000d9;
 }
